@@ -36,11 +36,29 @@ class LinkedList
             currentNode = currentNode?.next
         }
     }
+    func deleteNode(value : Int)
+    {
+        if head?.value == value
+        {
+            head = head?.next
+            return
+        }
+        var currentNode = head
+        var previousNode : Node?
+        while currentNode != nil && currentNode?.value != value{
+            previousNode = currentNode
+            currentNode = currentNode?.next
+        }
+        previousNode?.next = currentNode?.next
+    }
 }
 let linkedList = LinkedList()
-var index = 0
-while index < 10 {
+var index = 1
+while index < 11 {
     linkedList.insertNode(value: index)
     index = index + 1
 }
+linkedList.displayList()
+linkedList.deleteNode(value: 3)
+
 linkedList.displayList()
