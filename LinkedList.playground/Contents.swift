@@ -51,14 +51,37 @@ class LinkedList
         }
         previousNode?.next = currentNode?.next
     }
+    func displayEveryOtherNode()
+    {
+        var currentNode = head
+        while currentNode != nil {
+            print(currentNode?.value ?? "")
+            currentNode = currentNode?.next?.next
+        }
+    }
+    func sortList()
+    {
+        var currentNode = head
+        var tempNode : Node?
+        while currentNode != nil {
+            if currentNode!.value > currentNode!.next!.value
+            {
+                tempNode = currentNode
+                currentNode = currentNode?.next
+                currentNode?.next = tempNode
+            }
+        }
+    }
 }
 let linkedList = LinkedList()
-var index = 1
-while index < 11 {
-    linkedList.insertNode(value: index)
+var index = 0
+while index < 9 {
+    let randomInt = Int.random(in: 1...30)
+    linkedList.insertNode(value: randomInt)
     index = index + 1
 }
 linkedList.displayList()
-linkedList.deleteNode(value: 3)
-
+print("Now list that is sorted")
+linkedList.sortList()
 linkedList.displayList()
+
