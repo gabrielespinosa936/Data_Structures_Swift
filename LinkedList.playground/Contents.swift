@@ -59,19 +59,7 @@ class LinkedList
             currentNode = currentNode?.next?.next
         }
     }
-    func sortList()
-    {
-        var currentNode = head
-        var tempNode : Node?
-        while currentNode != nil {
-            if currentNode!.value > currentNode!.next!.value
-            {
-                tempNode = currentNode
-                currentNode = currentNode?.next
-                currentNode?.next = tempNode
-            }
-        }
-    }
+
 }
 let linkedList = LinkedList()
 var index = 0
@@ -80,8 +68,5 @@ while index < 9 {
     linkedList.insertNode(value: randomInt)
     index = index + 1
 }
-linkedList.displayList()
-print("Now list that is sorted")
-linkedList.sortList()
 linkedList.displayList()
 
