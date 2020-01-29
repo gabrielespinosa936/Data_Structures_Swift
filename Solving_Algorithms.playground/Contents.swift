@@ -97,6 +97,10 @@ class LinkedList
         }
         previousNode?.next = currentNode?.next
     }
+    func deleteNode()
+    {
+        
+    }
 }
 let linkedList = LinkedList()
 var index = 0
