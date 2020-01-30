@@ -12,17 +12,12 @@ func foundTarget() -> Bool
 
 func binarySearch(array : [Int], target : Int) -> Bool
 {
-    if array.count == 0
-    {
-        notFound()
-        return false
-    }
     let startIndex = 0
     let endIndex = array.count - 1
     let middleIndex = endIndex/2
     let middleValue = array[middleIndex]
     
-    if target < array[startIndex] || target > array[endIndex]
+    if array.count == 0 || target < array[startIndex] || target > array[endIndex]
     {
         return notFound()
     }
@@ -44,7 +39,7 @@ func binarySearch(array : [Int], target : Int) -> Bool
 }
 var numbers = [2,8,16,22,24,24,29,31,33,37,40]
 
-binarySearch(array: numbers, target: 41)
+binarySearch(array: numbers, target: 2)
 
 class Node
 {
