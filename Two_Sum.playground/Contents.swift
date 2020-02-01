@@ -60,7 +60,3 @@ func merge(left : [Int], right : [Int]) -> [Int]
 }
 
 
-let numbers = [9,2,3,8,1,7]
-
-
-print(mergeSort(array: arrayOfNumbers))
