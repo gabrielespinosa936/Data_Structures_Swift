@@ -92,7 +92,7 @@ class LinkedList
         }
         previousNode?.next = currentNode?.next
     }
-    func deleteNode()
+    func sortList()
     {
         var currentNode = head
         var temp : Int
@@ -133,3 +133,18 @@ linkedList.displayList()
 linkedList.deleteNode(value: Int.random(in: 0...10))
 print("After deletion")
 linkedList.displayList()
+
+
+print("New List")
+
+var myIndex = 0
+while myIndex < 10 {
+    let randomInt = Int.random(in: 5...30)
+    linkedList.insertNode(value: randomInt)
+    myIndex = myIndex + 1
+}
+linkedList.displayList()
+print("Now let's sort")
+linkedList.sortList()
+linkedList.displayList()
+
