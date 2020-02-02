@@ -94,7 +94,33 @@ class LinkedList
     }
     func deleteNode()
     {
-        
+        var currentNode = head
+        var temp : Int
+        var pointer : Node?
+        if( head == nil )
+        {
+            return
+        }
+        else
+        {
+            while(currentNode?.next != nil)
+            {
+                pointer = currentNode?.next
+                while(pointer != nil)
+                {
+                    if(currentNode!.value > pointer!.value)
+                    {
+                        temp = currentNode!.value
+
+                        currentNode?.value = pointer!.value
+
+                        pointer?.value = temp
+                    }
+                    pointer = pointer?.next
+                }
+                currentNode = currentNode?.next
+            }
+        }
     }
 }
 let linkedList = LinkedList()
